@@ -1,0 +1,44 @@
+.header{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Tangerine';
+}
+
+.logo {
+    font-size: 55px;
+    padding: 20px 40px;
+    transition: all ease 0.5s;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.logo:hover {
+    transform: scale(1);
+}
+
+.buttons {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 35px;
+    
+}
+
+.buttons div{
+    display: inline-flex;
+    margin-right: 30px;
+    transition: all ease 0.5s;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.buttons div:hover {
+    transform: scale(1);
+}
