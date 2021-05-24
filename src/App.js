@@ -1,5 +1,5 @@
 import './App.css';
-
+import React  from 'react';
 import Header from './components/header'
 import HomeTop from './components/Home--Top'
 import Carrousel from './components/carrousel'
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Header/>
       <HomeTop/>
-      <Carrousel/>
+      <Carrousel title="Promoções"/>
     </div>
   );
 }
