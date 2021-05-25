@@ -1,8 +1,9 @@
 .movieRow {
     margin-bottom: 30px;
-    color: white;
+    color: rgba(255,255,255,0.6);
     overflow-x: hidden;
     margin-top: 50px;
+    vertical-align: middle;
 }
 
 .movieRow h2 {
@@ -12,31 +13,40 @@
 .movieRow--listarea {
     overflow-x: hidden;
     padding-left: 30px;
-}
-.movieRow--list{
-    
-    transition: all ease 0.5s;
-}
-.movieRow--item{
-    
     display:inline-block;
-    width: 200px;
+    margin-top: 30px;
+}
+
+.movieRow--list{
+    transition: all ease 0.5s;
+    text-align: center;
+    margin-left: -40px;
+}
+
+.movieRow--item{
+    display:inline-block;
+    width: 150px;
     cursor: pointer;
+    margin-left:50px;
 }
 .movieRow--item img {
-    transform: scale(0.9);
-    transition: all ease 0.2s;
+    transform: scale(0.95);
+    transition: all ease 0.3s;
     font-size: 12px;
-    max-width: 200px;
+    max-width: 150px;
     height: 300px;
     object-fit: cover;
-    text-align: center;
+    text-align: center; 
+    margin: auto;
+    display: block;
 }
+
 .movieRow--item img:hover{
     transform: scale(1);
 } 
 .movieRow--left,
 .movieRow--right {
+    margin-top: 50px;
     position: absolute;
     width: 40px;
     height: 225px;
@@ -69,5 +79,5 @@
 }
 
 .Line {
-    border: 0.5px solid white;
+    border: 0.5px solid rgba(255,255,255,0.5);
 }

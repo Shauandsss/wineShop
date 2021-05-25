@@ -7,9 +7,12 @@ export default props => {
 
 
     return (<div className="Card">
-        <img className="Img--Card" src={props.img} alt="bottle of wine"/>
+        <div className="Img--Card">
+            <img src={props.img} alt="bottle of wine"/>
+        </div>
         <h3>{props.name}</h3>
-        <h4>R$ {props.price}</h4>        
+        <h4 className="Value"> R$ {props.price}</h4>   
+        <h4 className="Promo">R$ {Math.round(props.price * 0.80)}</h4>         
     </div>
     )
 }
