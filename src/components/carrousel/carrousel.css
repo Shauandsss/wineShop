@@ -4,12 +4,13 @@
     overflow-x: hidden;
     margin-top: 50px;
     vertical-align: middle;
+    
 }
 
 .movieRow h2 {
     margin: 0px 0px 10px 30px;
-
 }
+
 .movieRow--listarea {
     overflow-x: hidden;
     padding-left: 30px;
@@ -25,16 +26,17 @@
 
 .movieRow--item{
     display:inline-block;
-    width: 150px;
+    width: 180px;
     cursor: pointer;
-    margin-left:50px;
+    margin-left: 40px;
 }
+
 .movieRow--item img {
     transform: scale(0.95);
     transition: all ease 0.3s;
     font-size: 12px;
-    max-width: 150px;
-    height: 300px;
+    max-width: 120px;
+    height: 250px;
     object-fit: cover;
     text-align: center; 
     margin: auto;
@@ -44,6 +46,7 @@
 .movieRow--item img:hover{
     transform: scale(1);
 } 
+
 .movieRow--left,
 .movieRow--right {
     margin-top: 50px;

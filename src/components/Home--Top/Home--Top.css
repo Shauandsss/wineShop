@@ -8,15 +8,14 @@
 }
 .vertical--shadow {
     display: inline-flex;
-
 }
 
 .container img{
     width: 100%;
     object-fit: cover;
-    height: 60vh;
-    
+    height: 60vh; 
 }
+
 .left, .right {
     position: relative;
     width: 50%;
@@ -72,6 +71,7 @@
     position: absolute;
     transition: all ease 0.7s;
 }
+
 .right:hover .img--right--Back {
     opacity: 0.3;
     transition: all ease 0.7s;
