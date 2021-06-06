@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/wineShop/precache-manifest.415871ccc1af1bbaf1bf5561518ae949.js"
+  "/wineShop/precache-manifest.83ff0b6c56fe72cb02a65c40ef6bd2a9.js"
 );
 
 workbox.clientsClaim();
