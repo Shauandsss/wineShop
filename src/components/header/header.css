@@ -9,7 +9,25 @@
     align-items: center;
     color: white;
     font-family: 'Tangerine';
+    transition: 0.5s;
 }
+
+.black{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Tangerine';
+    background-color: rgb(20, 20, 20, 0.8);
+    transition: 0.5s;
+}
+
+
 
 .logo {
     font-size: 55px;

@@ -1,9 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
 import './header.css'
-export default () => {
+export default ({black}) => {
     return <div>
-        <header className="header">
+        <header className={black ? 'black' : 'header'}>
             <div className="logo">
                 Veneza
             </div>

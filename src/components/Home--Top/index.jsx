@@ -1,24 +1,219 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React from 'react'
-import WineComFundo from './WineComFundo.jpg'
-import WineSemFundo from './WineSemFundo.png'
-import WineBarellComFundo from './BarrilComFundo.jpg'
-import WineBarellSemFundo from './BarrilSemFundo.png'
-import './Home--Top.css'
+import React, { useEffect, useState } from 'react'
+import './Home--Top.scss'
+import {gsap, Power4} from "gsap";
 
 export default () => {
-    return <div className="container">
-        <div className="vertical--shadow">
-            <div className="left">
-            <h1 className="left--text">Come and see how we made a masterpiece in each bottle</h1>
-            <img className="img--right--Front" src={WineBarellSemFundo} alt="bottle of wine"/>
-                <img className="img--left--Back" src={WineBarellComFundo} alt="bottle of wine"/>
-            </div>
-            <div className="right">
-                <h1 className="right--text">Buy the best wine from the south of the World</h1>
-                <img className="img--right--Front" src={WineSemFundo} alt="bottle of wine"/>
-                <img className="img--right--Back" src={WineComFundo} alt="bottle of wine"/>
+    
+    const [hideButtons, setHideButtons] = useState(false)
+
+    useEffect (() => {
+        const loadAll = async () => {
+            
+            const cols = 3;
+            const main = document.getElementById('main');
+            let parts = [];
+
+            let images = [
+            "https://wallpapercave.com/wp/wp2878153.jpg",
+            "https://wallpaper.dog/large/5518832.jpg",
+            "https://images6.alphacoders.com/360/thumb-1920-360937.jpg",
+            "https://i.pinimg.com/originals/9b/83/70/9b837048fab048e423d5f47d40c82b11.jpg"
+            ];
+            let current = 0;
+            let playing = false;
+
+            for (let i in images) {
+                new Image().src = images[i];
+            }
+
+            for (let col = 0; col < cols; col++) {
+                let part = document.createElement('div');
+                part.className = 'part';
+                let el = document.createElement('div');
+                el.className = "section";
+                let img = document.createElement('img');
+                img.src = images[current];
+                el.appendChild(img);
+                part.style.setProperty('--x', -100/cols*col+'vw');
+                part.appendChild(el);
+                main.appendChild(part);
+                parts.push(part);
+            }
+
+            let animOptions = {
+                duration: 2.3,
+                ease: Power4.easeInOut
+            };
+
+            function go(dir) {
+                if (!playing) {
+                    playing = true;
+                    if (current + dir < 0) current = images.length - 1;
+                    else if (current + dir >= images.length) current = 0;
+                    else current += dir;
+
+                    function up(part, next) {
+                    part.appendChild(next);
+                    gsap.to(part, {...animOptions, y: -window.innerHeight}).then(function () {
+                        part.children[0].remove();
+                        gsap.to(part, {duration: 0, y: 0});
+                    })
+                    }
+
+                    function down(part, next) {
+                    part.prepend(next);
+                    gsap.to(part, {duration: 0, y: -window.innerHeight});
+                    gsap.to(part, {...animOptions, y: 0}).then(function () {
+                        part.children[1].remove();
+                        playing = false;
+                    })
+                    }
+
+                    for (let p in parts) {
+                    let part = parts[p];
+                    let next = document.createElement('div');
+                    next.className = 'section';
+                    let img = document.createElement('img');
+                    img.src = images[current];
+                    next.appendChild(img);
+
+                    if ((p - Math.max(0, dir)) % 2) {
+                        down(part, next);
+                    } else {
+                        up(part, next);
+                    }
+                    }
+                }
+            }
+
+            window.addEventListener('keydown', function(e) {
+            if (['ArrowDown', 'ArrowRight'].includes(e.key)) {
+                go(1);
+            }
+
+            else if (['ArrowUp', 'ArrowLeft'].includes(e.key)) {
+                go(-1);
+            }
+            });
+
+            function lerp(start, end, amount) {
+            return (1-amount)*start+amount*end
+            }
+
+            const cursor = document.createElement('div');
+            cursor.className = 'cursor';
+
+            const cursorF = document.createElement('div');
+            cursorF.className = 'cursor-f';
+            let cursorX = 0;
+            let cursorY = 0;
+            let pageX = 0;
+            let pageY = 0;
+            let size = 8;
+            let sizeF = 36;
+            let followSpeed = .16;
+
+            document.body.appendChild(cursor);
+            document.body.appendChild(cursorF);
+
+            if ('ontouchstart' in window) {
+                cursor.style.display = 'none';
+                cursorF.style.display = 'none';
+            }
+
+            cursor.style.setProperty('--size', size+'px');
+            cursorF.style.setProperty('--size', sizeF+'px');
+
+            window.addEventListener('mousemove', function(e) {
+                pageX = e.clientX;
+                pageY = e.clientY;
+                cursor.style.left = e.clientX-size/2+'px';
+                cursor.style.top = e.clientY-size/2+'px';
+            });
+
+            function loop() {
+                cursorX = lerp(cursorX, pageX, followSpeed);
+                cursorY = lerp(cursorY, pageY, followSpeed);
+                cursorF.style.top = cursorY - sizeF/2 + 'px';
+                cursorF.style.left = cursorX - sizeF/2 + 'px';
+                requestAnimationFrame(loop);
+            }
+
+            loop();
+
+            let startY;
+            let endY;
+            let clicked = false;
+
+            function mousedown(e) {
+                gsap.to(cursor, {scale: 4.5});
+                gsap.to(cursorF, {scale: .4});
+
+                clicked = true;
+                startY = e.clientY || e.touches[0].clientY || e.targetTouches[0].clientY;
+            }
+            function mouseup(e) {
+                gsap.to(cursor, {scale: 1});
+                gsap.to(cursorF, {scale: 1});
+
+                endY = e.clientY || endY;
+                if (clicked && startY && Math.abs(startY - endY) >= 40) {
+                    go(!Math.min(0, startY - endY)?1:-1);
+                    clicked = false;
+                    startY = null;
+                    endY = null;
+                }
+            }
+            window.addEventListener('mousedown', mousedown, false);
+            window.addEventListener('touchstart', mousedown, false);
+            window.addEventListener('touchmove', function(e) {
+            if (clicked) {
+                endY = e.touches[0].clientY || e.targetTouches[0].clientY;
+            }
+            }, false);
+            window.addEventListener('touchend', mouseup, false);
+            window.addEventListener('mouseup', mouseup, false);
+            document.getElementById('go-1').addEventListener("click", function(){
+                go(-1);
+            }, false);
+            document.getElementById('go1').addEventListener("click", function(){
+                go(1);
+            }, false);
+        }         
+        loadAll();
+    }, [])
+        
+    useEffect(() => {
+        const scrollListener = () => {
+          if(window.scrollY > 0){
+            setHideButtons(true);
+          } else {  
+            setHideButtons(false);
+          }
+        }
+    
+        window.addEventListener('scroll', scrollListener)
+        return () => {
+          window.removeEventListener('scroll', scrollListener)
+        }
+    }, [])
+
+    return (
+        <div id="main">
+            <div className="Background--vertical">
+                    <div className="Background--horizontal">
+                <h1>Veneza</h1>
+                <div style={{
+                    transition: '0.5s',
+                    visibility: hideButtons ? 'hidden' : 'visible',
+                    opacity: hideButtons ? 0 : 1,
+                }}class="buttons">    
+                    <button class="next" id="go-1"></button>
+                    <button class="prev" id="go1"></button>
+                </div>
+                </div>
             </div>
         </div>
-    </div>
+    )
 }
