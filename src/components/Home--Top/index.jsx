@@ -10,7 +10,7 @@ export default () => {
     useEffect (() => {
         const loadAll = async () => {
             
-            const cols = 3;
+            const cols = 5;
             const main = document.getElementById('main');
             let parts = [];
 
@@ -18,7 +18,7 @@ export default () => {
             "https://wallpapercave.com/wp/wp2878153.jpg",
             "https://wallpaper.dog/large/5518832.jpg",
             "https://images6.alphacoders.com/360/thumb-1920-360937.jpg",
-            "https://i.pinimg.com/originals/9b/83/70/9b837048fab048e423d5f47d40c82b11.jpg"
+            "https://wallpaperaccess.com/full/404250.jpg"
             ];
             let current = 0;
             let playing = false;
@@ -47,44 +47,57 @@ export default () => {
             };
 
             function go(dir) {
+                const scrollListener = () => {
+                    if(window.scrollY > 0){
+                      return null;
+                    }
+                }
+              
+                window.addEventListener('scroll', scrollListener)
                 if (!playing) {
+                    disableScroll();
                     playing = true;
                     if (current + dir < 0) current = images.length - 1;
                     else if (current + dir >= images.length) current = 0;
                     else current += dir;
 
                     function up(part, next) {
-                    part.appendChild(next);
-                    gsap.to(part, {...animOptions, y: -window.innerHeight}).then(function () {
-                        part.children[0].remove();
-                        gsap.to(part, {duration: 0, y: 0});
-                    })
+                        part.appendChild(next);
+                        gsap.to(part, {...animOptions, y: -window.innerHeight}).then(function () {
+                            part.children[0].remove();
+                            gsap.to(part, {duration: 0, y: 0});
+                        })
                     }
 
                     function down(part, next) {
-                    part.prepend(next);
-                    gsap.to(part, {duration: 0, y: -window.innerHeight});
-                    gsap.to(part, {...animOptions, y: 0}).then(function () {
-                        part.children[1].remove();
-                        playing = false;
-                    })
+                        part.prepend(next);
+                        gsap.to(part, {duration: 0, y: -window.innerHeight});
+                        gsap.to(part, {...animOptions, y: 0}).then(function () {
+                            part.children[1].remove();
+                            playing = false;
+                            enableScroll();
+                        })
                     }
 
                     for (let p in parts) {
-                    let part = parts[p];
-                    let next = document.createElement('div');
-                    next.className = 'section';
-                    let img = document.createElement('img');
-                    img.src = images[current];
-                    next.appendChild(img);
+                        let part = parts[p];
+                        let next = document.createElement('div');
+                        next.className = 'section';
+                        let img = document.createElement('img');
+                        img.src = images[current];
+                        next.appendChild(img);
 
-                    if ((p - Math.max(0, dir)) % 2) {
-                        down(part, next);
-                    } else {
-                        up(part, next);
-                    }
+                        if ((p - Math.max(0, dir)) % 2) {
+                            down(part, next);
+                        } else {
+                            up(part, next);
+                        }
                     }
                 }
+                  window.addEventListener('scroll', scrollListener)
+                  return () => {
+                    window.removeEventListener('scroll', scrollListener)
+                  }
             }
 
             window.addEventListener('keydown', function(e) {
@@ -164,7 +177,7 @@ export default () => {
                     startY = null;
                     endY = null;
                 }
-            }
+            }/**/
             window.addEventListener('mousedown', mousedown, false);
             window.addEventListener('touchstart', mousedown, false);
             window.addEventListener('touchmove', function(e) {
@@ -198,6 +211,46 @@ export default () => {
           window.removeEventListener('scroll', scrollListener)
         }
     }, [])
+
+    var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+    function preventDefault(e) {
+        e.preventDefault();
+    }
+
+    function preventDefaultForScrollKeys(e) {
+        if (keys[e.keyCode]) {
+            preventDefault(e);
+            return false;
+        }
+    }
+
+    // modern Chrome requires { passive: false } when adding event
+    var supportsPassive = false;
+    try {
+        window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+            get: function () { supportsPassive = true; } 
+        }));
+    } catch(e) {}
+
+    var wheelOpt = supportsPassive ? { passive: false } : false;
+    var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+    // call this to Disable
+    function disableScroll() {
+        window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+        window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+        window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+        window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+    }
+
+    // call this to Enable
+    function enableScroll() {
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+        window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+        window.removeEventListener('touchmove', preventDefault, wheelOpt);
+        window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+    }
 
     return (
         <div id="main">
