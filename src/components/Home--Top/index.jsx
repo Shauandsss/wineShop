@@ -52,9 +52,9 @@ export default () => {
                       return null;
                     }
                 }
-              
                 window.addEventListener('scroll', scrollListener)
-                if (!playing) {
+    
+                if ((!playing) && (window.scrollY <= 0)) {
                     disableScroll();
                     playing = true;
                     if (current + dir < 0) current = images.length - 1;
@@ -111,7 +111,7 @@ export default () => {
             });
 
             function lerp(start, end, amount) {
-            return (1-amount)*start+amount*end
+                return (1-amount)*start+amount*end
             }
 
             const cursor = document.createElement('div');

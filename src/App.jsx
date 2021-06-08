@@ -1,9 +1,10 @@
-import './App.css';
+import './App.scss';
 import React, {useEffect, useState}  from 'react';
 import Header from './components/header'
 import HomeTop from './components/Home--Top'
 import Carrousel from './components/carrousel'
 import TopWine from './components/Top--Wine'
+import {gsap, Power4} from "gsap";
 
 function App() {
 
@@ -23,7 +24,6 @@ function App() {
       window.removeEventListener('scroll', scrollListener)
     }
   }, [])
-
 
   return (
     <div className="App">
