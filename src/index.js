@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App.jsx';
 
+document.title = "Veneza";
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
