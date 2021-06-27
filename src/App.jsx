@@ -4,7 +4,6 @@ import Header from './components/header'
 import HomeTop from './components/Home--Top'
 import Carrousel from './components/carrousel'
 import TopWine from './components/Top--Wine'
-import {gsap, Power4} from "gsap";
 
 function App() {
 

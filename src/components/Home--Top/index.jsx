@@ -229,7 +229,7 @@ export default () => {
     var supportsPassive = false;
     try {
         window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-            get: function () { supportsPassive = true; } 
+            get:  supportsPassive = true
         }));
     } catch(e) {}
 

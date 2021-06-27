@@ -5,13 +5,11 @@
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     -webkit-user-drag: none;
-    
   }
   
   #main {
     display: flex;
     overflow-y: hidden;
-    cursor: none;
     .part {
       flex: 1;
   
@@ -120,3 +118,12 @@
       }
     }
   }
+
+@media (max-width:760px) {
+  .buttons {
+    right: 10px;
+    button {
+      margin: 10px 0px;
+    }
+  }
+}
