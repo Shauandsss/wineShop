@@ -17,18 +17,10 @@ export default () => {
                             Lallier Laborie
                         </div>
                         <div className="Content">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor, sit amet consectetur adipisicing elit. At accusantium aut suscipit rem placeat odit perspiciatis earum? Ullam quae facilis illum. Culpa, porro magni! Libero architecto perferendis tempora velit ducimus.
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. At accusantium aut suscipit rem placeat odit perspiciatis earum? Ullam quae facilis illum. Culpa, porro magni! Libero architecto perferendis tempora velit ducimus.
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At accusantium aut suscipit rem placeat odit perspiciatis earum? Ullam quae facilis illum. Culpa, porro magni! Libero architecto perferendis tempora velit ducimus.
                         </div>
-                    </div>
-                    <div className="hidden-elements">
-                        <div className="Element_1">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, enim saepe eligendi id assumenda blanditiis, amet provident illum veritatis expedita ea, eum ex! Ad autem hic eius numquam sunt provident.
-                        </div>
-                        <div className="Element_2">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis similique praesentium, dolorum illo, architecto necessitatibus nesciunt aliquid sequi numquam minus illum.
-                        </div>
-                    </div>               
+                    </div>            
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ export default () => {
     useEffect (() => {
         const loadAll = async () => {
             
-            const cols = 5;
+            const cols = 3;
             const main = document.getElementById('main');
             let parts = [];
 
