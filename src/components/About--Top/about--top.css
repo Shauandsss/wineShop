@@ -1,0 +1,77 @@
+
+.Img {
+	width:100%;
+	height: 100%;
+	border-style:solid ;
+	border-top-color: rgb(121, 121, 107);
+	border-left-color: rgb(102, 102, 89);
+	border-right-color: rgb(170, 170, 150);
+	border-bottom-color: rgb(194, 194, 171);
+	border-width: 18px;
+	filter:saturate(0)
+}
+
+.BorderLeft--Img, 
+.BorderRight--Img{
+	width:30%;
+	transform: translate(20%, 20%);
+	padding: 15px;
+	position: relative;
+}
+
+.BorderRight--Img{
+	transform: translate(200%, -30%);
+	margin-bottom: 500px;
+}
+
+.BorderLeft--Img:hover .Img,
+.BorderRight--Img:hover .Img {
+	transition: all ease 0.6s;
+	filter:saturate(1)
+}
+
+.BorderLeft--Img:hover .Left--Text,
+.BorderRight--Img:hover .Right--Text {
+	opacity: 1;
+} 
+
+.Left--Text, .Right--Text {
+	text-align: center;
+	width: 90%;
+	margin: -25% 0 0 0%;
+	font-size: 100px;
+	font-family: 'Tangerine';
+	transition: all ease 0.6s;
+	position: fixed;
+	opacity: 0;
+}
+
+.Texts--Right{
+	max-width: 50%;
+	transform: translate(80%, -100%);
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Title--Right{
+	font-size: 32px;
+}
+
+.Content--Right{
+	font-size: 18px;
+}
+
+
+.Texts--Left{
+	max-width: 50%;
+	transform: translate(15%, -250%);
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Title--Left{
+	font-size: 32px;
+	margin-left: 60%;
+}
+
+.Content--Left{
+	font-size: 18px;
+}
