@@ -1,13 +1,13 @@
 {
-  "main.css": "/wineShop/static/css/main.effc9a40.chunk.css",
-  "main.js": "/wineShop/static/js/main.7595c548.chunk.js",
-  "main.js.map": "/wineShop/static/js/main.7595c548.chunk.js.map",
+  "main.css": "/wineShop/static/css/main.f1c13ed6.chunk.css",
+  "main.js": "/wineShop/static/js/main.c015dfed.chunk.js",
+  "main.js.map": "/wineShop/static/js/main.c015dfed.chunk.js.map",
   "runtime~main.js": "/wineShop/static/js/runtime~main.59100d59.js",
   "runtime~main.js.map": "/wineShop/static/js/runtime~main.59100d59.js.map",
   "static/js/2.654f4fbf.chunk.js": "/wineShop/static/js/2.654f4fbf.chunk.js",
   "static/js/2.654f4fbf.chunk.js.map": "/wineShop/static/js/2.654f4fbf.chunk.js.map",
   "index.html": "/wineShop/index.html",
-  "precache-manifest.e8892f814f4a273541d60c06a95f54d8.js": "/wineShop/precache-manifest.e8892f814f4a273541d60c06a95f54d8.js",
+  "precache-manifest.03ecaf97bbb6430ac2d4f85a6b390001.js": "/wineShop/precache-manifest.03ecaf97bbb6430ac2d4f85a6b390001.js",
   "service-worker.js": "/wineShop/service-worker.js",
-  "static/css/main.effc9a40.chunk.css.map": "/wineShop/static/css/main.effc9a40.chunk.css.map"
+  "static/css/main.f1c13ed6.chunk.css.map": "/wineShop/static/css/main.f1c13ed6.chunk.css.map"
 }

@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "dac6b17674556aa9a3d6",
-    "url": "/wineShop/static/css/main.effc9a40.chunk.css"
+    "revision": "b81ed7aabde72be69f00",
+    "url": "/wineShop/static/css/main.f1c13ed6.chunk.css"
   },
   {
-    "revision": "dac6b17674556aa9a3d6",
-    "url": "/wineShop/static/js/main.7595c548.chunk.js"
+    "revision": "b81ed7aabde72be69f00",
+    "url": "/wineShop/static/js/main.c015dfed.chunk.js"
   },
   {
     "revision": "9c294a2a7277e696f0cb",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/wineShop/static/js/2.654f4fbf.chunk.js"
   },
   {
-    "revision": "945efe74450d77951401f1a78a912cf8",
+    "revision": "5bf3f82010c67eb57bf35b39fbb9ee9c",
     "url": "/wineShop/index.html"
   }
 ];
