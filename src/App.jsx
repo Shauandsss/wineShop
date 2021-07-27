@@ -34,21 +34,21 @@ function App() {
 
       <Header path="*" black={blackHeader}/>
 
-        <Route exact path="/">
+        <Route exact path="/wineShop/">
           <HomeTop/>
           <Carrousel title="Promotion"/>
           <TopWine></TopWine>
         </Route>      
         
-        <Route exact path="/About">
+        <Route exact path="/wineShop/About">
           <AboutTop></AboutTop>
         </Route>
 
-        <Route exact path="/Contact">
+        <Route exact path="/wineShop/Contact">
 
         </Route>
 
-        <Route exact path="/Shop">
+        <Route exact path="/wineShop/Shop">
           <Carrousel title="Promotion"/>
           <Carrousel title="Promotion"/>
           <Carrousel title="Promotion"/>

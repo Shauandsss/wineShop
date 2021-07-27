@@ -6,13 +6,13 @@ import './header.css'
 export default ({black}) => {
     return (<div>
             <header className={black ? 'black' : 'header'}>
-                <Link to="/" className="logo">
+                <Link to="/wineShop/" className="logo">
                     Veneza
                 </Link>
                 <div className="buttons">
-                    <Link className="button" to="/Shop">Buy from us</Link>
-                    <Link className="button" to="/Contact">Contact us</Link>
-                    <Link className="button" to="/About">About us</Link>
+                    <Link className="button" to="/wineShop/Shop">Buy from us</Link>
+                    <Link className="button" to="/wineShop/Contact">Contact us</Link>
+                    <Link className="button" to="/wineShop/About">About us</Link>
                 </div>
             </header>
     </div>

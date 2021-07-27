@@ -30,7 +30,7 @@ export default () => {
             </div>
 
             <div className="BorderRight--Img">
-                <img alt='Paint of dionisio' src='https://lh3.googleusercontent.com/proxy/0pwkBwt1ell4L01aSGlDKXkzkzkeH-DVHRTYV5KDXwNZ_pkAMWlBpSC2sPrx1sTqLqI17gak789ILvF_gIK1xAgoYeJH3oYBqHY4jTVC_dEvlMbhGNPpCEAmJWip' class="Img"/>
+                <img alt='Paint of dionisio' src='https://lh3.googleusercontent.com/proxy/J0cUQouXzojuPFUcWT4ZuxQMRwRiwRcNAVsujRKmiYTmqO-MStPsmdcEqJAZeFe0MTijHmvuK0BxSoJgy9Gxxv2Zmrfd_F8mnfkb-O3_aDb6DramAHok9PXqGGpc' class="Img"/>
                 <div className="Right--Text">
                     Dionisio
                 </div>                  
@@ -40,7 +40,7 @@ export default () => {
                     As Dionisio we like Wine    
                 </div>
                 <div className="Content--Left">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit ea eum, totam obcaecati impedit sequi? Quas cupiditate suscipit quis tempore voluptas delectus quae, aliquam itaque eum impedit voluptatem omnis. Repudiandae.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit ea eum, totam obcaecati impedit sequi? Quas cupiditate suscipit quis tempore voluptas delectus quae, aliquam itaque eum impedit voluptatem omnis. Repudiandae.
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit ea eum, totam obcaecati impedit sequi? Quas cupiditate suscipit quis tempore voluptas delectus quae, aliquam itaque eum impedit voluptatem omnis. Repudiandae.
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit ea eum, totam obcaecati impedit sequi? Quas cupiditate suscipit quis tempore voluptas delectus quae, aliquam itaque eum impedit voluptatem omnis. Repudiandae.<br/><br/><br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit ea eum, totam obcaecati impedit sequi? Quas cupiditate suscipit quis tempore voluptas delectus quae, aliquam itaque eum impedit voluptatem omnis. Repudiandae.
