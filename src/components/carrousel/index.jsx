@@ -1,5 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
-
 import './carrousel.css'
 
 import CarrouselCard from '../carrousel--card'

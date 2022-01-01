@@ -1,5 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
-
 import './carrousel--card.css'
 import React from 'react';
 

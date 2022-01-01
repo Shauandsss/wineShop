@@ -1,6 +1,6 @@
-/* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
-  
+import dionysus from '../../content/greek-mythology-dionysus.jpeg'
+
 import './about--top.css'
 
 export default () => {
@@ -30,7 +30,7 @@ export default () => {
             </div>
 
             <div className="BorderRight--Img">
-                <img alt='Paint of dionisio' src='https://lh3.googleusercontent.com/proxy/J0cUQouXzojuPFUcWT4ZuxQMRwRiwRcNAVsujRKmiYTmqO-MStPsmdcEqJAZeFe0MTijHmvuK0BxSoJgy9Gxxv2Zmrfd_F8mnfkb-O3_aDb6DramAHok9PXqGGpc' class="Img"/>
+                <img alt='Paint of dionisio' src={dionysus} class="Img"/>
                 <div className="Right--Text">
                     Dionisio
                 </div>                  

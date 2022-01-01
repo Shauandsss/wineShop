@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 import React, { useEffect, useState } from 'react'
 import './Home--Top.scss'
 import {gsap, Power4} from "gsap";
