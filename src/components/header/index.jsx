@@ -13,6 +13,7 @@ export default ({black}) => {
                     <Link className="button" to="/wineShop/Contact">Contact us</Link>
                     <Link className="button" to="/wineShop/About">About us</Link>
                 </div>
+
             </header>
     </div>
     )

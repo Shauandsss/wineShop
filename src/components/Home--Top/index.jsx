@@ -16,8 +16,9 @@ export default () => {
             let images = [
             "https://wallpapercave.com/wp/wp2878153.jpg",
             "https://wallpaper.dog/large/5518832.jpg",
-            "https://images6.alphacoders.com/360/thumb-1920-360937.jpg",
-            "https://wallpaperaccess.com/full/404250.jpg"
+            'https://exame.com/wp-content/uploads/2017/08/thinkstockphotos-613652948.jpg?quality=70&strip=info.jpg',
+            'https://www.royalsalute.com/wp-content/uploads/2021/05/royal-salute-25-YO-treasured-blend-hero-image-scaled-aspect-ratio-5-7-scaled.jpg',
+            'https://www.mensjournal.com/wp-content/uploads/2021/09/DalmoreFlight.jpg?quality=86&strip=all'
             ];
             let current = 0;
             let playing = false;
