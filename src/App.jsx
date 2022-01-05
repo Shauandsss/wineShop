@@ -37,11 +37,11 @@ function App() {
         <Route exact path="/wineShop/">
           <HomeTop/>
           <Carrousel title="Promotion"/>
-          <TopWine></TopWine>
+          <TopWine/>
         </Route>      
         
         <Route exact path="/wineShop/About">
-          <AboutTop></AboutTop>
+          <AboutTop/>
         </Route>
 
         <Route exact path="/wineShop/Contact">
@@ -49,10 +49,11 @@ function App() {
         </Route>
 
         <Route exact path="/wineShop/Shop">
-          <Carrousel title="Promotion"/>
-          <Carrousel title="Promotion"/>
-          <Carrousel title="Promotion"/>
-          <Carrousel title="Promotion"/>
+
+          <Carrousel />
+          <Carrousel />
+          <Carrousel />
+          <Carrousel />
         </Route>
 
       </Router>

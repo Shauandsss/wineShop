@@ -177,8 +177,8 @@ export default () => {
                     startY = null;
                     endY = null;
                 }
-            }/**/
-            window.addEventListener('mousedown', mousedown, false);
+            }
+            //window.addEventListener('mousedown', mousedown, false); Arrastar
             window.addEventListener('touchstart', mousedown, false);
             window.addEventListener('touchmove', function(e) {
             if (clicked) {

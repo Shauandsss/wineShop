@@ -31,8 +31,8 @@ export default ({title}) => {
     return (
         <div className="movieRow">
         
-        <h2>{title}</h2>
-        <div className="Line"></div>
+        {title && <h2>{title}</h2>}
+        {title && <div className="Line"></div>}
         <div className="movieRow--left" onClick={handleLeftArrow}>
             <NavigateBeforeIcon style={{fontSize:50}}/>
         </div>
