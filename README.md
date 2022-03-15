@@ -1,4 +1,4 @@
-#A Wine-shop made in react, still without database.
+# A Wine-shop made in ReactJS.
 
 ## [Link to](https://shauandsss.github.io/wineShop/)
 
