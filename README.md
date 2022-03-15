@@ -1,6 +1,6 @@
-A Wine-shop made in react, still without database.
+#A Wine-shop made in react, still without database.
 
-page: https://shauandsss.github.io/wineShop/
+## [Link to](https://shauandsss.github.io/wineShop/)
 
 ![image](https://user-images.githubusercontent.com/51674001/156473852-c147aa2f-fd62-47aa-9766-e5bfe7e741d6.png)
 
