@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/wineShop/static/css/main.72cf61dd.css",
-    "main.js": "/wineShop/static/js/main.f565f974.js",
+    "main.css": "/wineShop/static/css/main.223b1267.css",
+    "main.js": "/wineShop/static/js/main.3ef82e70.js",
     "static/media/greek-mythology-dionysus.jpeg": "/wineShop/static/media/greek-mythology-dionysus.63eb27b28e151670e0ce.jpeg",
     "index.html": "/wineShop/index.html",
-    "main.72cf61dd.css.map": "/wineShop/static/css/main.72cf61dd.css.map",
-    "main.f565f974.js.map": "/wineShop/static/js/main.f565f974.js.map"
+    "main.223b1267.css.map": "/wineShop/static/css/main.223b1267.css.map",
+    "main.3ef82e70.js.map": "/wineShop/static/js/main.3ef82e70.js.map"
   },
   "entrypoints": [
-    "static/css/main.72cf61dd.css",
-    "static/js/main.f565f974.js"
+    "static/css/main.223b1267.css",
+    "static/js/main.3ef82e70.js"
   ]
 }
