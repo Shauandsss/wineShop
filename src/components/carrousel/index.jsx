@@ -1,104 +1,82 @@
-import './carrousel.css'
+import "./carrousel.css";
 
-import CarrouselCard from '../carrousel--card'
-import React, { useState } from 'react';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import React, { useState } from "react";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
+import { FaCartPlus } from "react-icons/fa";
 
-export default ({title}) => {
+import * as CartActions from "../../store/actions/cart";
 
-    
-    const [scrollX, setScrollX] = useState(0);
-
-    const handleLeftArrow = () => {
-        let x = scrollX + 220;
-        if(x > 0) {
-            x = 0;
-        }
-        setScrollX(x)
+const Carrousel = ({ wines, addToCart }) => {
+  const [scrollX, setScrollX] = useState(0);
+  const handleLeftArrow = () => {
+    let x = scrollX + 220;
+    if (x > 0) {
+      x = 0;
     }
+    setScrollX(x);
+  };
 
-    const handleRightArrow = () => {
-        let x = scrollX - Math.round(window.innerWidth/2)
-        let listW = 17*220;
-        if((window.innerWidth - listW) > x ){
-            x = (window.innerWidth - listW) - 60
-        }
-        setScrollX(x)
+  const handleRightArrow = () => {
+    let x = scrollX - Math.round(window.innerWidth / 2);
+    let listW = 17 * 220;
+    if (window.innerWidth - listW > x) {
+      x = window.innerWidth - listW - 60;
     }
+    setScrollX(x);
+  };
 
-    return (
-        <div className="movieRow">
-        
-        {title && <h2>{title}</h2>}
-        {title && <div className="Line"></div>}
-        <div className="movieRow--left" onClick={handleLeftArrow}>
-            <NavigateBeforeIcon style={{fontSize:50}}/>
-        </div>
-        <div className="movieRow--right" onClick={handleRightArrow}>
-            <NavigateNextIcon style={{fontSize:50}}/>
-        </div>
-        <div className="movieRow--listarea">    
-            <div className="movieRow--list" style={{
-                marginLeft :scrollX,
-                width:17*220
-            }}>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Rosé Pinot Noir Santa Augusta" img="https://santaaugusta.com.br/wp-content/uploads/2020/11/Rose_editado.png" price={299.90}/>
+  return (
+    <div className="movieRow">
+      <div className="movieRow--left" onClick={handleLeftArrow}>
+        <NavigateBeforeIcon style={{ fontSize: 50 }} />
+      </div>
+      <div className="movieRow--right" onClick={handleRightArrow}>
+        <NavigateNextIcon style={{ fontSize: 50 }} />
+      </div>
+      <div className="movieRow--listarea">
+        <div
+          className="movieRow--list"
+          style={{
+            marginLeft: scrollX,
+            width: 17 * 220,
+          }}
+        >
+          {wines.wines.map((wine) => (
+            <div key={wine.id} id="movieRow--item" className="movieRow--item">
+              <div className="Card">
+                <div className="Img--Card">
+                  <div className="square" />
+                  <img src={wine.img_url} alt="bottle of wine" />
                 </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Tinto Cabernet Sauvignon/Merlot MAESTRIA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/vinho-maestria-cabernet-sauvignon-merlot.png" price={349.90}/>
+                <FaCartPlus onClick={() => addToCart(wine)} />
+                <h3>{wine.name}</h3>
+                <h4 className="Value"> R$ {wine.price}</h4>
+
+                <div className="Promo">
+                  <h4 className="Promo--Value">
+                    R$ {Math.round(wine.price * 0.8)}
+                  </h4>
                 </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Tinto Pinot Noir MAESTRIA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/vinho-maestria-pinot-noir.png" price={129.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Branco Sauvignon Blanc SANTA AUGUSTA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/sauvignon_blanc_santaugusta.png" price={99.99}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Rosé Pinot Noir Santa Augusta" img="https://santaaugusta.com.br/wp-content/uploads/2020/11/Rose_editado.png" price={299.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Tinto Cabernet Sauvignon/Merlot MAESTRIA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/vinho-maestria-cabernet-sauvignon-merlot.png" price={349.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Tinto Pinot Noir MAESTRIA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/vinho-maestria-pinot-noir.png" price={129.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Branco Sauvignon Blanc SANTA AUGUSTA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/sauvignon_blanc_santaugusta.png" price={99.99}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Rosé Pinot Noir Santa Augusta" img="https://santaaugusta.com.br/wp-content/uploads/2020/11/Rose_editado.png" price={299.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Tinto Cabernet Sauvignon/Merlot MAESTRIA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/vinho-maestria-cabernet-sauvignon-merlot.png" price={349.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Tinto Pinot Noir MAESTRIA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/vinho-maestria-pinot-noir.png" price={129.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Branco Sauvignon Blanc SANTA AUGUSTA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/sauvignon_blanc_santaugusta.png" price={99.99}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Branco Sauvignon Blanc SANTA AUGUSTA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/sauvignon_blanc_santaugusta.png" price={99.99}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Rosé Pinot Noir Santa Augusta" img="https://santaaugusta.com.br/wp-content/uploads/2020/11/Rose_editado.png" price={299.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Tinto Cabernet Sauvignon/Merlot MAESTRIA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/vinho-maestria-cabernet-sauvignon-merlot.png" price={349.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Tinto Pinot Noir MAESTRIA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/vinho-maestria-pinot-noir.png" price={129.90}/>
-                </div>
-                <div id="movieRow--item" className="movieRow--item">
-                    <CarrouselCard name="Vinho Branco Sauvignon Blanc SANTA AUGUSTA" img="https://santaaugusta.com.br/wp-content/uploads/2019/08/sauvignon_blanc_santaugusta.png" price={99.99}/>
-                </div>
+              </div>
             </div>
+          ))}
+
+          <div id="movieRow--item" className="movieRow--item"></div>
         </div>
+      </div>
     </div>
-    
-            
-    )
-}
+  );
+};
+
+const mapStateToProps = (state) => ({
+  wines: state.cart,
+});
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(CartActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Carrousel);
