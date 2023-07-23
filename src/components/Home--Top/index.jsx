@@ -16,7 +16,7 @@ export default () => {
         "https://wallpaper.dog/large/5518832.jpg",
         "https://exame.com/wp-content/uploads/2017/08/thinkstockphotos-613652948.jpg?quality=70&strip=info.jpg",
         "https://www.royalsalute.com/wp-content/uploads/2021/05/royal-salute-25-YO-treasured-blend-hero-image-scaled-aspect-ratio-5-7-scaled.jpg",
-        "https://www.mensjournal.com/wp-content/uploads/2021/09/DalmoreFlight.jpg?quality=86&strip=all",
+        "https://images.squarespace-cdn.com/content/v1/59c3feb149fc2b152179e47e/1632406298003-RS9KDSQB3ARIGZKV77FS/Dalmore+flight+3.jpg"
       ];
       let current = 0;
       let playing = false;
